@@ -1,0 +1,30 @@
+{
+    "version": 2,
+    "builds": [
+        {
+            "src":"frontend/view/**/*",
+            "use":"@versel/static"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/",
+            "dest": "frontend/view/index.html"
+        },
+
+        {
+            "src": "/main.css",
+            "dest": "frontend/view/main.css"
+        },
+
+        {
+            "src": "/main.js",
+            "dest": "frontend/view/main.js"
+        },
+
+        {
+            "src": "/pokedex.png",
+            "dest": "frontend/view/pokedex.png"
+        }        
+    ]
+}
