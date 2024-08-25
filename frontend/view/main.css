@@ -1,0 +1,148 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(to bottom, #6ab7f5, #fff);
+    min-height: 100vh;
+}
+
+main {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 650px;
+    width: 450px;
+}
+
+#pesquisa {
+    height: 30px;
+    width: 300px;
+}
+
+.pokedex {
+    position: absolute;
+    height: 650px;
+    width: 450px;
+}
+
+#button-ent {
+    color: #fff;
+    background-color: rgb(20, 20, 20);
+    height: 30px;
+    width: 30px;
+}
+
+.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 175px;
+    width: 270px;
+    border-radius: 5px;
+    margin: 170px 40px 0px 0px;
+}
+
+#espaço-da-pesquisa {
+    display: flex;
+    height: 30px;
+    width: 300px;
+    margin: 50px 0px 0px 0px;
+}
+
+.nome-no-card{
+    font-size: 25px;
+    top: 430px;
+    left: 675px;
+    color: rgb(34, 34, 34);
+}
+
+.pokemon {
+    height: 125px;
+    width: 125px;
+}
+
+#buttons {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 60px;
+    width: 320px;
+    margin: 0px 0px 10px 0px;
+}
+
+#button-next {
+    height: 30px;
+    width: 100px;
+    background-color: rgb(20, 20, 20);
+    color: #fff;
+}
+
+#button-anterior {
+    height: 30px;
+    width: 100px;
+    background-color: rgb(20, 20, 20);
+    color: #fff;
+}
+
+#button-audio {
+    height: 30px;
+    width: 70px;
+    background-color: rgb(20, 20, 20);
+    color: #fff;
+}
+
+#tela-de-movimentos {
+    display: flex;
+    height: 100px;
+    width: 300px;
+    border-radius: 5px;
+    border: solid black 2px;
+    margin: 10px 0px 0px 0px;
+}
+
+.organizar{
+    height: 100%;
+    width: 50%;
+}
+
+#move1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: solid black 1px;
+    height: 50%;
+    width: 100%;
+}
+#move2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: solid black 1px;
+    height: 50%;
+    width: 100%;
+}
+#move3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: solid black 1px;
+    height: 50%;
+    width: 100%;
+}
+#move4 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: solid black 1px;
+    height: 50%;
+    width: 100%;
+}
