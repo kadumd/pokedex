@@ -56,6 +56,19 @@ const servidor = http.createServer((pedido, resposta)=>{
             return
         })
     }    
+
+    if(pedido.url === '/icone-pokebola.png'){
+        fs.readFile('frontend/view/icone-pokebola.png', (erro, dadosDoArquivo)=>{
+            if(erro){
+                resposta.writeHead(500, { 'Content-Type': 'text/plain' })
+                resposta.end("Erro no servidor")
+                return
+            }
+            resposta.writeHead(200, { 'Content-Type': 'image/png' })
+            resposta.end(dadosDoArquivo)
+            return
+        })
+    } 
 })
 
 servidor.listen(portaDeEntrada, "0.0.0.0")
