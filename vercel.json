@@ -25,6 +25,10 @@
         {
             "src": "/pokedex.png",
             "dest": "frontend/view/pokedex.png"
-        }        
+        },
+        {
+            "src": "/icone-pokebola.png",
+            "dest": "frontend/view/icone-pokebola.png"
+        }   
     ]
 }
