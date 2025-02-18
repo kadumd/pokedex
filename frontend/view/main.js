@@ -110,6 +110,7 @@ async function executar(evento) {
 
 
 function proximoEAnterior (evento){
+    console.log(evento)
     if(evento.target.id == "button-anterior"){
         if(novoNum > 1) {
             //faça a subtração do novoNum menos um "novoNum é o id"----------------
