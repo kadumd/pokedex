@@ -1,74 +1,36 @@
 const http = require("http")
-const fs = require ("fs")
+const fs = require("fs")
 const path = require("path")
 const portaDeEntrada = process.env.PORT || 3000;
 
-const servidor = http.createServer((pedido, resposta)=>{
+const servidor = http.createServer((pedido, resposta) => {
     console.log(pedido.url)
-    if(pedido.url === '/'){
-        fs.readFile('frontend/view/index.html', (erro, dadosDoArquivo)=>{
-            if(erro){
-                resposta.writeHead(500, { 'Content-Type': 'text/plain' })
-                resposta.end("Erro no servidor")
-                return
-            }
-            resposta.writeHead(200, { 'Content-Type': 'text/html' })
-            resposta.end(dadosDoArquivo)
-            return
-        })
+    switch (pedido.url) {
+        case '/':
+            resposta.writeHead(200, { "Content-Type": "text/html" })
+            resposta.end(fs.readFileSync("./frontend/view/index.html"))
+            break
+
+        case '/main.css':
+            resposta.writeHead(200, { "Content-Type": "text/css" })
+            resposta.end(fs.readFileSync("./frontend/view/main.css"))
+            break
+
+        case '/main.js':
+            resposta.writeHead(200, { "Content-Type": "text/javascript" })
+            resposta.end(fs.readFileSync("./frontend/view/main.js"))
+            break
+
+        case '/pokedex.png':
+            resposta.writeHead(200, { "Content-Type": "image/png" })
+            resposta.end(fs.readFileSync("./frontend/view/pokedex.png"))
+            break
+
+        case '/icone-pokebola.png':
+            resposta.writeHead(200, { "Content-Type": "image/png" })
+            resposta.end(fs.readFileSync("./frontend/view/icone-pokebola.png"))
+            break
     }
-
-    if(pedido.url === '/main.css'){
-        fs.readFile('frontend/view/main.css', (erro, dadosDoArquivo)=>{
-            if(erro){
-                resposta.writeHead(500, { 'Content-Type': 'text/plain' })
-                resposta.end("Erro no servidor")
-                return
-            }
-            resposta.writeHead(200, { 'Content-Type': 'text/css' })
-            resposta.end(dadosDoArquivo)
-            return
-        })
-    }
-
-    if(pedido.url === '/main.js'){
-        fs.readFile('frontend/view/main.js', (erro, dadosDoArquivo)=>{
-            if(erro){
-                resposta.writeHead(500, { 'Content-Type': 'text/plain' })
-                resposta.end("Erro no servidor")
-                return
-            }
-            resposta.writeHead(200, { 'Content-Type': 'text/javascript' })
-            resposta.end(dadosDoArquivo)
-            return
-        })
-    }
-
-    if(pedido.url === '/pokedex.png'){
-        fs.readFile('frontend/view/pokedex.png', (erro, dadosDoArquivo)=>{
-            if(erro){
-                resposta.writeHead(500, { 'Content-Type': 'text/plain' })
-                resposta.end("Erro no servidor")
-                return
-            }
-            resposta.writeHead(200, { 'Content-Type': 'image/png' })
-            resposta.end(dadosDoArquivo)
-            return
-        })
-    }    
-
-    if(pedido.url === '/icone-pokebola.png'){
-        fs.readFile('frontend/view/icone-pokebola.png', (erro, dadosDoArquivo)=>{
-            if(erro){
-                resposta.writeHead(500, { 'Content-Type': 'text/plain' })
-                resposta.end("Erro no servidor")
-                return
-            }
-            resposta.writeHead(200, { 'Content-Type': 'image/png' })
-            resposta.end(dadosDoArquivo)
-            return
-        })
-    } 
 })
 
 servidor.listen(portaDeEntrada, "0.0.0.0")
